@@ -25,7 +25,7 @@ var getData = function(url) {
       } else {
         reject(new Error(this.statusText));
       }
-    };
+    }
 
   });
 
@@ -36,8 +36,8 @@ var getData = function(url) {
 // Test Promise.all() 
 var getJSON = url => {
 	return new Promise((resolve, reject) => { 
-		if(url)
-			resolve(url);
+  if(url)
+    resolve(url);
 		else
 			reject(new Error(url));
 	});
@@ -47,19 +47,19 @@ var getJSON = url => {
 //then()方法接受两个参数， 第一个是 reslove 状态的回调函数（异步操作成功），第二个参数是 rejected 状态的回调函数（可省略）
 getData("http://localhost:3000/pingcap.com/api/v1/clusters").then(
 	response => {
-		if(response.code == 200)
+	if(response.code == 200)
 			console.log(response.data);
-    	return getData("http://localhost:3000/pingcap.com/api/v1/cluster?cluster_name=demo");
+      return getData("http://localhost:3000/pingcap.com/api/v1/cluster?cluster_name=demo");
 	}, function(error) {
   console.error('出错了', error);
 }).then(function(response) {
   if (response.code == 200)
-    ReactDOM.render( <Manager /> ,
+    ReactDOM.render( <Manager />,
       document.querySelector('#app')
     );
 }).catch(function(error) {
     // error
-    console.error('出错了', error);
+  console.error('出错了', error);
 });
 
 

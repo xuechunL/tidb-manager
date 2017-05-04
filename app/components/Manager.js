@@ -8,25 +8,20 @@ import Cluster from './Cluster.js';
 export default class Manager extends React.Component {
 
   getCreate() {
-    return <CreateBtn action= "Create Cluster" />
+    return <CreateBtn action = "Create Cluster" / >
   }
 
   getClusterList() {
-    return <ClusterList />
+    return <ClusterList / >
   }
 
   getCluster() {
-    return <Cluster />
+    return <Cluster / >
   }
 
   render() {
-    return ( 
-    	< div className = "manager" >
-	      	<h1>TiDB Manager</h1>
-          {this.getCreate()}
-          {this.getClusterList()}
-          {this.getCluster()}
-	    < /div>
+    return ( < div className = "manager" >
+      < h1 > TiDB Manager < /h1> { this.getCreate() } { this.getClusterList() } { this.getCluster() } < /div>
     );
   }
 }

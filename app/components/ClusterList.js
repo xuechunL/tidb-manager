@@ -35,7 +35,7 @@ const EmailCell = ({ rowData, dataKey, ...props }) => (
 
 const ActionCell = ({ rowData, dataKey, ...props }) => {
   function handleAction() {
-  	// TODO: Actions handler
+// TODO: Actions handler
     alert(`id:${rowData[dataKey]}`);
     console.log(rowData, dataKey);
   }
@@ -51,70 +51,66 @@ const ActionCell = ({ rowData, dataKey, ...props }) => {
 };
 
 const preloadImage = path => new Promise((resolve, reject) => {
-	var image = new Image();
-	image.onload  = resolve;
-	image.onerror = reject;
-	image.src     = path;
-	image.width   = "50";
+  let image = new Image();
+  image.onload  = resolve;
+  image.onerror = reject;
+  image.src     = path;
+  image.width   = "50";
 });
 
 const ClusterList = React.createClass({
-	getInitialState() {
-	    return {
-	      data: clusters
-	    };
-	  },
-	handleSortColumn(sortColumn, sortType) {
-	    this.setState({
-	      sortColumn, sortType
-	    });
-	  },
-	render() {
-	  	const { data } = this.state;
-	    // 父组件通过 props 属性传递数据给子组件
-	    return (
-	      <div>
-	        <Table height={400} data={data} rowHeight={64} headerHeight={36} className="clusters">
+  getInitialState() {
+    return {
+      data: clusters
+    };
+  },
+  handleSortColumn(sortColumn, sortType) {
+    this.setState({sortColumn, sortType});
+  },
+  render() {
+    const { data } = this.state;
+	// 父组件通过 props 属性传递数据给子组件
+		return (
+		<div>
+		<Table height={400} data={data} rowHeight={64} headerHeight={36} className="clusters">
 
-	          <Column width={160} >
-	            <HeaderCell>Cluster Name</HeaderCell>
-	            <Cell dataKey="name" />
-	          </Column>
+			<Column width={160} >
+				<HeaderCell>Cluster Name</HeaderCell>
+				<Cell dataKey="name" />
+			</Column>
 
-	          <Column width={120} >
-	            <HeaderCell>TiDB Nodes</HeaderCell>
-	            <Cell dataKey="tidb" />
-	          </Column>
+			<Column width={120} >
+				<HeaderCell>TiDB Nodes</HeaderCell>
+				<Cell dataKey="tidb" />
+			</Column>
 
-	          <Column width={120} >
-	            <HeaderCell>PD Nodes</HeaderCell>
-	            <Cell dataKey="pd" />
-	          </Column>
+			<Column width={120} >
+				<HeaderCell>PD Nodes</HeaderCell>
+				<Cell dataKey="pd" />
+			</Column>
 
-	          <Column width={120} >
-	            <HeaderCell>TiKV Nodes</HeaderCell>
-	            <Cell dataKey="tikv" />
-	          </Column>
+			<Column width={120} >
+				<HeaderCell>TiKV Nodes</HeaderCell>
+				<Cell dataKey="tikv" />
+			</Column>
 
-	          <Column width={300} >
-	            <HeaderCell>Email</HeaderCell>
-	            <EmailCell dataKey="email" />
-	          </Column>
+			<Column width={300} >
+				<HeaderCell>Email</HeaderCell>
+				<EmailCell dataKey="email" />
+			</Column>
 
-	          <Column width={300} >
-	            <HeaderCell>Date</HeaderCell>
-	            <DateCell dataKey="date" />
-	          </Column>
+			<Column width={300} >
+				<HeaderCell>Date</HeaderCell>     
+				<DateCell dataKey="date" />
+			</Column>
 
-	          <Column width={300} >
-	            <HeaderCell>Action</HeaderCell>
-	            <ActionCell dataKey="id" />
-	          </Column>
+			<Column width={300} >
+				<HeaderCell>Action</HeaderCell>
+				<ActionCell dataKey="id" />
+			</Column>
 
-	        </Table>
-	      </div>
-    );
-  }
+	</Table>
+	</div>);}
 });
 
 export default ClusterList;

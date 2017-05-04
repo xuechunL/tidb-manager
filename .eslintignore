@@ -1,1 +1,4 @@
-.eslintignore
+# /node_modules/* and /bower_components/* ignored by default
+
+# Ignore lib files except build/index.js
+app/lib/*
