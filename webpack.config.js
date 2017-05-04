@@ -22,13 +22,13 @@ module.exports = {
     filename: './bundle.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx','.coffee']
+    extensions: ['', '.js', '.jsx', '.coffee']
   },
   module: {
     loaders:[
       { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader' },
-      { test: /\.less$/, loader: 'style!css!less'},// LESS
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },// inline base64 URLs for <=8k images, direct URLs for the rest
+      { test: /\.less$/, loader: 'style!css!less'}, // LESS
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }, // inline base64 URLs for <=8k images, direct URLs for the rest
       { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
     ]
   },

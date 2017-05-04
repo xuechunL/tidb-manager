@@ -48,8 +48,8 @@ var getJSON = url => {
 getData("http://localhost:3000/pingcap.com/api/v1/clusters").then(
 	response => {
 	if(response.code == 200)
-			console.log(response.data);
-      return getData("http://localhost:3000/pingcap.com/api/v1/cluster?cluster_name=demo");
+	console.log(response.data);
+    return getData("http://localhost:3000/pingcap.com/api/v1/cluster?cluster_name=demo");
 	}, function(error) {
   console.error('出错了', error);
 }).then(function(response) {
