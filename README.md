@@ -1,5 +1,5 @@
 # TiDB Manager
-[![Analytics](https://ga-beacon.appspot.com/UA-99768888-1/readme)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](http://www.pingcap.com:8080/UA-99768888-1/readme)](https://www.pingcap.com)
 
 TiDB Manager with React.
 
