@@ -1,5 +1,5 @@
 # TiDB Manager
-[![Analytics](http://www.pingcap.com:8080/UA-99768888-1/readme)](https://www.pingcap.com)
+[![Analytics](http://107.150.119.14/UA-99768888-1/readme)](https://www.pingcap.com)
 
 TiDB Manager with React.
 
